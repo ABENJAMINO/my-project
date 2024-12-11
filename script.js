@@ -1,4 +1,3 @@
-// Select DOM elements
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 const resultsContainer = document.getElementById("results");
@@ -8,7 +7,6 @@ const loadingSpinner = document.getElementById("loadingSpinner");
 
 let currentAudio = null;
 
-// Search event listeners
 searchButton.addEventListener("click", handleSearch);
 searchInput.addEventListener("keyup", (event) => {
   if (event.key === "Enter") handleSearch();
@@ -16,8 +14,8 @@ searchInput.addEventListener("keyup", (event) => {
 
 function handleSearch() {
   const query = searchInput.value.trim();
-  resultsContainer.innerHTML = ""; // Clear previous results
-  clearErrorMessage(); // Clear previous error message
+  resultsContainer.innerHTML = "";
+  clearErrorMessage();
 
   if (!query) {
     displayMessage("Please enter a search term.");
@@ -25,11 +23,9 @@ function handleSearch() {
   }
 
   showLoading(true);
-  // Keep search term visible until results are fetched
   fetchMusicTracks(query);
 }
 
-// Highlight link functionality using event delegation
 document.querySelector(".links-container").addEventListener("click", (event) => {
   if (event.target.classList.contains("highlightable")) {
     document.querySelectorAll(".highlightable").forEach((link) =>
@@ -44,13 +40,9 @@ async function fetchMusicTracks(query) {
     const proxy = "https://proxy.cors.sh/";
     const apiURL = `${proxy}https://api.deezer.com/search?q=${encodeURIComponent(query)}&limit=10`;
 
-    console.log("Fetching data from API:", apiURL);
-
     const response = await fetch(apiURL, {
       headers: { "x-requested-with": "XMLHttpRequest" },
     });
-
-    console.log("Response Status:", response.status);
 
     if (!response.ok) {
       displayMessage("Oops, try again! Something went wrong.");
@@ -58,7 +50,6 @@ async function fetchMusicTracks(query) {
     }
 
     const data = await response.json();
-    console.log("API Response Data:", data);
 
     if (!data.data || data.data.length === 0) {
       displayMessage("Oops, try again! No tracks found for your search.");
@@ -70,7 +61,7 @@ async function fetchMusicTracks(query) {
     console.error(`Error fetching tracks for query "${query}":`, error);
     displayMessage("Oops, try again! Unable to fetch tracks.");
   } finally {
-    showLoading(false); // Ensure the loading spinner is hidden when done
+    showLoading(false);
   }
 }
 
@@ -97,14 +88,11 @@ function displayTracks(tracks) {
         currentAudio.pause();
       }
       currentAudio = audio;
-
-      // Start the disk rolling animation and update the song title
       disk.style.animation = "rolling 2s linear infinite";
       songTitle.textContent = `Now Playing: ${track.title} by ${track.artist.name}`;
     });
 
     audio.addEventListener("pause", () => {
-      // Stop the disk animation when the audio is paused
       disk.style.animation = "none";
     });
 
@@ -119,7 +107,6 @@ function displayMessage(message) {
   messageDiv.className = "message";
   resultsContainer.appendChild(messageDiv);
 
-  // Fade in error message
   setTimeout(() => {
     messageDiv.style.opacity = 1;
   }, 100);
