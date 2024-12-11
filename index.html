@@ -1,0 +1,64 @@
+html.. <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snippet.com</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1><i class="bx bxs-music"></i> SNIPPET.COM</h1>
+      <p>Snippet at its best</p>
+      <div class="links-container">
+        <a href="https://www.billboard.com/charts/hot-100" target="_blank" class="highlightable">View Billboard Hot 100</a> |
+        <a href="https://music.apple.com/ng/playlist/top-100-nigeria/pl.a7a92b4363f94494a217dbf4cd3fe30c" target="_blank" class="highlightable">View Apple Music NG Top 100</a>
+      </div>
+    </header>
+
+    <div class="disk-container">
+      <div class="disk"></div>
+      <div class="song-title-container">
+        <p class="song-title">Start Searching...</p>
+      </div>
+    </div>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for a song...">
+      <button id="searchButton" aria-label="Search">
+        <i class="bx bx-search"></i> Search
+      </button>
+    </div>
+
+    <div class="results-container" id="results">
+      <!-- Search results will appear here -->
+    </div>
+
+    <div class="message" id="errorMessage"></div>
+  </div>
+
+  <!-- Spinner will initially be hidden -->
+  <div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2024 Snippet.com. All rights reserved.</p>
+    <p>
+      <a href="#privacy-policy"><i class="bx bx-lock"></i> Privacy Policy</a> | 
+      <a href="#terms"><i class="bx bx-file"></i> Terms of Service</a> | 
+      <a href="#contact"><i class="bx bx-envelope"></i> Contact Us</a>
+    </p>
+    <p>
+      <i class="bx bxl-facebook-circle"></i>
+      <i class="bx bxl-twitter"></i>
+      <i class="bx bxl-instagram"></i>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
