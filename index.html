@@ -4,59 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snippet.com</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-  <div class="app-container">
-    <header>
-      <h1><i class="bx bxs-music"></i> SNIPPET.COM</h1>
-      <p>Snippet at its best</p>
-      <div class="links-container">
-        <a href="https://www.billboard.com/charts/hot-100" target="_blank" class="highlightable">View Billboard Hot 100</a> |
-        <a href="https://music.apple.com/ng/playlist/top-100-nigeria/pl.a7a92b4363f94494a217dbf4cd3fe30c" target="_blank" class="highlightable">View Apple Music NG Top 100</a>
+<body class="bg-dark text-white">
+  <div class="container py-4">
+    <header class="text-center mb-4">
+      <h1 class="display-4 text-warning"><i class="bx bxs-music"></i> SNIPPET.COM</h1>
+      <p class="lead text-light">Snippet at its best</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="https://www.billboard.com/charts/hot-100" target="_blank" class="btn btn-outline-warning btn-sm">View Billboard Hot 100</a>
+        <a href="https://music.apple.com/ng/playlist/top-100-nigeria/pl.a7a92b4363f94494a217dbf4cd3fe30c" target="_blank" class="btn btn-outline-warning btn-sm">View Apple Music NG Top 100</a>
       </div>
     </header>
-
-    <div class="disk-container">
-      <div class="disk"></div>
-      <div class="song-title-container">
-        <p class="song-title">Start Searching...</p>
-      </div>
+    <div class="text-center mb-4">
+      <div class="position-relative mx-auto rounded-circle bg-gradient bg-warning" style="width: 200px; height: 200px;"></div>
+      <p class="mt-3 song-title text-warning">Start Searching...</p>
     </div>
-
-    <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Search for a song...">
-      <button id="searchButton" aria-label="Search">
-        <i class="bx bx-search"></i> Search
-      </button>
+    <div class="input-group mb-4 w-75 mx-auto">
+      <input type="text" id="searchInput" class="form-control" placeholder="Search for a song..." aria-label="Search">
+      <button id="searchButton" class="btn btn-warning"><i class="bx bx-search"></i> Search</button>
     </div>
-
-    <div class="results-container" id="results"></div>
-
-    <div class="message" id="errorMessage"></div>
+    <div class="results-container bg-dark-subtle p-3 rounded" id="results"></div>
+    <div class="message mt-3 text-danger" id="errorMessage"></div>
   </div>
-
-  <div class="loading-spinner" id="loadingSpinner">
-    <div class="spinner"></div>
+  <div class="loading-spinner" id="loadingSpinner" style="display:none;">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
   </div>
-
-  <footer class="footer">
-    <p>© 2024 Snippet.com. All rights reserved.</p>
+  <footer class="bg-secondary text-center py-4 mt-4">
+    <p class="mb-2">© 2024 Snippet.com. All rights reserved.</p>
     <p>
-      <a href="#privacy-policy"><i class="bx bx-lock"></i> Privacy Policy</a> | 
-      <a href="#terms"><i class="bx bx-file"></i> Terms of Service</a> | 
-      <a href="#contact"><i class="bx bx-envelope"></i> Contact Us</a>
+      <a href="#privacy-policy" class="text-warning text-decoration-none"><i class="bx bx-lock"></i> Privacy Policy</a> | 
+      <a href="#terms" class="text-warning text-decoration-none"><i class="bx bx-file"></i> Terms of Service</a> | 
+      <a href="#contact" class="text-warning text-decoration-none"><i class="bx bx-envelope"></i> Contact Us</a>
     </p>
-    <p>
-      <a href="https://www.facebook.com/yourpage"><i class="bx bxl-facebook-circle"></i></a>
-      <a href="https://twitter.com/yourprofile"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/yourprofile"><i class="bx bxl-instagram"></i></a>
-    </p>
+    <div class="d-flex justify-content-center gap-3 mt-2">
+      <a href="https://www.facebook.com/yourpage" class="text-warning"><i class="bx bxl-facebook-circle fs-4"></i></a>
+      <a href="https://twitter.com/yourprofile" class="text-warning"><i class="fab fa-twitter fs-4"></i></a>
+      <a href="https://www.instagram.com/yourprofile" class="text-warning"><i class="bx bxl-instagram fs-4"></i></a>
+    </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
